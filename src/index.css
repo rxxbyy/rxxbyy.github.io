@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+}
+
+#footer-cursor {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    animation: cursor-pulse 1000ms infinite steps(2);
+}
+
+@keyframes cursor-pulse {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
