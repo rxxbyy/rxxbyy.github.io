@@ -12,8 +12,6 @@ body {
 }
 
 #footer-cursor {
-    background-color: rgba(0, 0, 0, 0.5);
-    display: block;
     animation: cursor-pulse 1000ms infinite steps(2);
 }
 
