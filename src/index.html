@@ -6,37 +6,73 @@
     <link rel="stylesheet" href="./output.css">
     <title>rxxbyy's website</title>
 </head>
-<body class="text-md w-full md:w-2/3 m-auto bg-orange-50 p-10 md:text-lg">
+<body class="text-md w-full md:w-2/3 m-auto bg-[#232222] text-[#D0C4B3] p-10 md:text-lg">
     <header class="w-full">
-        <p>you@rxxbyy.github.io :: <span class="text-red-400">~</span> $ ls</p>
+        <p>you@rxxbyy.netlify.app :: <span class="text-[#E4BC68]">~</span> $ ls</p>
         <table class="flex">
             <tr class="flex gap-4">
                 <td>
-                    <a href="https://github.com/rxxbyy" class="text-red-600">code<span class="text-black">/</span></a>
+                    <a href="https://github.com/rxxbyy" class="text-[#E4BC68]" target="_blank">code<span>/</span></a>
                 </td>
                 <td>
-                    <a href="https://linkedin.com/in/manuel21" class="text-red-600">linkedin<span class="text-black">/</span></a>
+                    <a href="https://linkedin.com/in/manuel21" class="text-[#E4BC68]" target="_blank">linkedin<span>/</span></a>
+                </td>
+                <td>
+                    <a href="https://sillycomputerstuff.netlify.app" class="text-[#E4BC68]" target="_blank">sillycomputerstuff<span>/</span></a>
                 </td>
             </tr>
-            <tr>
-                <td class="text-black cursor-pointer">about.txt</td>
+            <tr class="flex gap-4">
+                <td class="cursor-pointer">
+                    <p>about.txt</p>
+                </td>
+                <td class="cursor-pointer">
+                    <p id="resume-link" class="hover:underline">resume.pdf</p>
+                </td>
             </tr>
         </table>
     </header>
-    <p class="mt-5">you@rxxbyy.github.io :: <span class="text-red-400">~</span> $ cat about.txt</p>
+    <p class="mt-5">you@rxxbyy.netlify.app :: <span class="text-[#E4BC68]">~</span> $ cat about.txt</p>
     <main class="mt-2 w-full">
+        <div class="flex flex-row font-bold">
+            <span class="mr-2">##</span>
+            <span class="">ABOUT ME</span>
+        </div>
         <p>
-            ABOUT ME
-            <br>
-            ========
-            <br>
-            My name is Manuel "rxxbyy" (pronunced as ruby), an undergraduate computer scientist
-            from Mexico.
+            Welcome to my HTML website on the world wide web. My name is Manuel, I'm a Computer Scientist
+            and a Systems Software Engineer.
+        </p>
+        <p class="mt-3">
+            I usually go by the username "rxxbyy" on some websites like GitHub and YouTube. One of my
+            hobbies is produce music, if you're interested, you can see them on my
+            <a href="https://youtube.com/@rxxbyy" target="_blank" class="text-[#E4BC68] underline">channel</a>.
+        </p>
+        <p class="mt-3">
+            I also have a blog online called <a href="https://sillycomputerstuff.netlify.app/" target="_blank" class="text-[#E4BC68] underline">silly computers' stuff</a>
+            where I write about a variety of topics related to theoretical and applied computer science.
         </p>
     </main>
-    <footer class="flex flex-row">
-        <p class="mt-2 flex-row">you@rxxbyy.github.io :: <span class="text-red-400">~</span> $ </p>
-        <span class="flex-row mt-4 text-sm" id="footer-cursor">█</span>
+    <footer class="flex flex-row mt-2">
+        <p class="flex-row">you@rxxbyy.netlify.app :: <span class="text-[#E4BC68]">~</span> $ </p>
+        <div class="ml-2 flex-row items-center h-full">
+            <span class="flex-row justify-center text-sm align-middle text-center" id="footer-cursor">█</span>
+        </div>
     </footer>
+    <script>
+        const resumeLink = document.getElementById('resume-link');
+        resumeLink.addEventListener('click', () => {
+            let link = document.createElement('a');
+
+            link.onclick = (e) => {
+                e.preventDefault();
+            };
+            
+            link.target = '_blank';
+            link.href = './public/resumé.pdf';
+            link.download = 'resumé.pdf';
+            link.dispatchEvent(new MouseEvent('click'));
+
+            link.remove();
+        });
+    </script>
 </body>
 </html>
